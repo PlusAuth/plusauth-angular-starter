@@ -3,13 +3,13 @@ import { BrowserModule } from '@angular/platform-browser'
 
 import { AppRoutingModule } from './app-routing.module'
 import { AppComponent } from './app.component'
-import { HeaderComponent } from './header/header.component'
-import { HomeComponent } from './home/home.component'
-import { SilentRenewComponent } from './silent-renew/silent-renew.component'
-import { AuthCallbackComponent } from './auth-callback/auth-callback.component'
+import { HeaderComponent } from './components/header/header.component'
+import { HomeComponent } from './views/home/home.component'
+import { SilentRenewComponent } from './components/silent-renew/silent-renew.component'
+import { AuthCallbackComponent } from './components/auth-callback/auth-callback.component'
 import { AuthService } from './services/auth.service'
-import { ProfileComponent } from './profile/profile.component'
-import { UnauthorizedComponent } from './unauthorized/unauthorized.component'
+import { ProfileComponent } from './views/profile/profile.component'
+import { UnauthorizedComponent } from './views/unauthorized/unauthorized.component'
 
 @NgModule({
   declarations: [
