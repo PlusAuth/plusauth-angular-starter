@@ -1,0 +1,27 @@
+<header>
+  <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="/">PlusAuth Starter</a>
+      <ul class="nav navbar-nav navbar-right">
+        <li
+          *ngIf="authService.getUser(); else notLogged"
+          class="nav-item navbar-nav"
+        >
+          <a class="nav-link" [routerLink]="['/profile']"
+            >Logged in as: {{ authService.getUser().user.username }}</a
+          >
+          <button class="btn btn-link" (click)="authService.logout()">
+            Logout
+          </button>
+        </li>
+        <ng-template #notLogged>
+          <li class="nav-item navbar-nav">
+            <button class="btn btn-link" (click)="authService.login()">
+              Login
+            </button>
+          </li>
+        </ng-template>
+      </ul>
+    </div>
+  </nav>
+</header>

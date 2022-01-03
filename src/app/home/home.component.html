@@ -1,0 +1,23 @@
+<div class="jumbotron">
+  <div class="container">
+    <h1 class="display-3">Hello, world!</h1>
+    <p>
+      This is a template for a simple login/register system. It includes the
+      OpenID Connect Implicit Flow. To view Profile page please login.
+    </p>
+    <p>
+      <a
+        [routerLink]="['/profile']"
+        class="btn btn-success btn-lg"
+        *ngIf="authService.getUser(); else notLogged"
+      >
+        View Profile &raquo;
+      </a>
+      <ng-template #notLogged>
+        <button class="btn btn-primary btn-lg" (click)="authService.login()">
+          Login/Register &raquo;
+        </button>
+      </ng-template>
+    </p>
+  </div>
+</div>

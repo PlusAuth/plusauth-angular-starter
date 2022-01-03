@@ -1,27 +1,48 @@
-# PlusauthAngularStarter
+# PlusAuth Angular Starter Project
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.1.2.
+This is a very simple Angular project demonstrating basic authentication flows such as register, login and logout.
+To keep things simple we bootstrapped the project with
+[angular-cli](https://angular.io/cli) and used
+[@plusauth/plusauth-oidc-client-js](https://github.com/PlusAuth/plusauth-oidc-client-js) for authentication.
 
-## Development server
+## Table of Contents
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+- [Prerequisites](#prerequisites)
+- [Getting Started](#getting-started)
+- [License](#license)
 
-## Code scaffolding
+## Prerequisites
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Before running the project, you must first follow these steps:
 
-## Build
+1. Create a PlusAuth account and a tenant at https://dashboard.plusauth.com
+2. Navigate to [Clients](https://dashboard.plusauth.com/~clients) tab and create a client of type `Single Page Application`.
+3. Go to details page of the client that you've just created and set the following fields as:
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+- Redirect Uris: http://localhost:4200/callback, http://localhost:4200/silent-renew
+- Post Logout Redirect Uris: http://localhost:4200/
 
-## Running unit tests
+Write down your Client Id, it will be required in application's configuration.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## Getting Started
 
-## Running end-to-end tests
+First we need to supply required configuration values for the application. Rename `environment.example.ts` file as `environment.ts`.
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+Then modify the values inside `environment.ts` file using your Client ID and your PlusAuth tenant name.
 
-## Further help
+Finally, start the application with:
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+```shell
+npm start
+# or with yarn
+yarn start
+```
+
+The application is hosted at http://localhost:4200/
+
+> If you are serving your application in a different port from the default one which is `4200`, 
+> make sure you have updated your Client's configuration mentioned in the [Prerequisites](#prerequisites) section and [auth.service.js](src/app/services/auth.service.js) accordingly.
+
+## License
+
+This project is licensed under the MIT license. See the [LICENSE](LICENSE) file for more info.

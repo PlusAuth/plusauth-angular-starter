@@ -44,3 +44,8 @@ testem.log
 # System Files
 .DS_Store
 Thumbs.db
+
+.vscode
+
+# ignore dev environment file
+/src/environments/environment.ts

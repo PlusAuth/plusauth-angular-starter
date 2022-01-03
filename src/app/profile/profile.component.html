@@ -1,0 +1,4 @@
+<div class="container" v-if="user">
+  <h3>Welcome {{ authService.getUser().user.username }} !</h3>
+  <pre>User object: {{ getUserString() }} </pre>
+</div>

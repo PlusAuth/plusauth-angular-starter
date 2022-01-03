@@ -3,7 +3,9 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  oidcIssuer: 'https://<YOUR_PLUSAUTH_TENANT_NAME>.plusauth.com/',
+  clientId: '<YOUR_PLUSAUTH_CLIENT_ID>'
 };
 
 /*
