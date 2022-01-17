@@ -41,7 +41,7 @@ Before running the project, you must first follow these steps:
 - Redirect Uris: http://localhost:4200/callback, http://localhost:4200/silent-renew
 - Post-Logout Redirect Uris: http://localhost:4200/
 
-Write down your Client Id since it will be required in the application's configuration.
+Please note your `Client Id` that will be required in the application's configuration.
 
 ## Getting Started
 
